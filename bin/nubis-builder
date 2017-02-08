@@ -248,11 +248,8 @@ generate_packer_template(){
    jq ". + { \"provisioners\": .provisioners | sort_by(.order | tonumber) } |
        del(.provisioners[] | .order) |
        del(.variables.builders) |
-<<<<<<< HEAD
        .variables.spot_price = \"${spot_price:-0}\" |
-=======
        .variables.instance_type = \"${instance_type:-${default_instance_size}}\" |
->>>>>>> 3698449b8e49718092ba914924c466c34bc644b3
        .variables.builder_prefix = \"${builder_prefix}\" |
        .variables.project_path = \"${project_path}\"" < $nubis_json_file > $packer_template_file
 
