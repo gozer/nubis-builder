@@ -13,6 +13,7 @@
     "region": "{{user `aws_region`}}",
     "source_ami": "{{user `aws_centos_ebs_ami`}}",
     "force_deregister": "true",
+    "force_delete_snapshot" : "true",
     "instance_type": "{{user `instance_type`}}",
     "ssh_username": "centos",
     "ssh_pty": "true",
